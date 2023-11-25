@@ -1,0 +1,79 @@
+.card-stack {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    position: static;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s;
+    width: 100px;
+    height: 150px;
+    background-color: blue;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    transform: translateY(50px);
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card-face {
+    position: page;
+    object-position: inherit;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    content-visibility: visible;
+}
+
+.card-front {
+    background-color: purple;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    line-height: 150px;
+}
+
+.card-back {
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 150px;
+    transform: rotateY(180deg);
+}
+/*added background position*/
+.card:hover .card-content {
+    transform: rotateY(180deg);
+    transition: background-position;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+canvas {
+    display: block;
+}
+/*added in matrix effect*/
+canvas {
+    matrix(align-content: background-size: auto;)
+}
